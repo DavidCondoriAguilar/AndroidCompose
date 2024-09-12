@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Sistema 1228</string>
+    <string name="phrase">Vine, ví y vencí</string>
+    <string name="author">Julio César</string>
+    <string name="greeting">Hola</string>
+    <string name="begin">Empezar</string>
+    <string name="rights">2024 Todos los derechos reservados</string>
+    <string name="title_activity_begin">BeginActivity</string>
+    <string name="welcome_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et rhoncus ex. Duis a justo ut metus feugiat aliquam ac a justo. Maecenas tellus erat, egestas iaculis ex eget, semper sagittis urna. Fusce quam leo, bibendum quis ornare quis, fermentum nec nibh.</string>
+    <string name="terms">Términos</string>
+    <string name="home">Inicio</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_terms">TermsActivity</string>
+    <string name="terms_conditions">Términos y condiciones</string>
+    <string name="terms_conditions_text">
+        Nunc ullamcorper sodales augue, vel vestibulum purus iaculis ut. Duis mattis nulla eu vulputate ultrices. Etiam quis efficitur justo. In vel tempor magna, ac auctor elit. Phasellus mattis, mi at placerat molestie, felis justo vulputate neque, in molestie elit nulla in ligula. Curabitur mollis suscipit lorem non volutpat. Morbi bibendum tristique vestibulum. Praesent ex tellus, bibendum ac ullamcorper quis, suscipit et lacus. Fusce ullamcorper nec neque sit amet pulvinar. Curabitur in quam rhoncus elit posuere aliquam nec elementum felis. Sed commodo finibus nisl, quis ultricies ante lacinia nec. Curabitur maximus neque id lacus pulvinar, a suscipit tellus convallis.
+\n\n
+Curabitur vitae nunc lacinia, rhoncus lectus id, semper enim. Maecenas laoreet consequat massa. Ut semper pellentesque velit, eu dignissim urna pulvinar non. Curabitur nec arcu mollis nisl dignissim congue. Nulla facilisi. Aenean tincidunt mi vitae enim posuere, eu interdum ipsum malesuada. In mauris lectus, rutrum et metus ac, sollicitudin dictum dui.
+\n\n
+Vivamus quis ultricies ipsum. Morbi dictum ligula at luctus aliquet. Ut non ipsum justo. Proin congue hendrerit orci eu pulvinar. Donec justo lacus, pellentesque non commodo non, eleifend sit amet sapien. Sed tristique tincidunt magna, quis fringilla leo volutpat in. Vivamus euismod facilisis elementum. Vestibulum id lectus quis ante accumsan mattis id quis tortor. Aliquam egestas, erat ut fringilla interdum, nunc sapien facilisis nibh, sit amet aliquet magna eros ac velit. Vestibulum quis nunc efficitur, ultricies urna nec, aliquet est. Etiam ut luctus libero. Nunc dictum eros non felis pellentesque pulvinar. Aliquam tristique aliquam varius. Aenean placerat urna non enim rhoncus, a tristique augue aliquet. Quisque facilisis suscipit dui. Nam eu egestas felis.
+\n\n
+Pellentesque non diam vehicula magna consectetur placerat nec faucibus ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sit amet ante placerat, vehicula velit eu, dictum purus. In luctus id ipsum nec semper. Nam vitae eleifend risus. Vestibulum semper ac leo nec accumsan. Duis eu nisi ex. Cras porta, eros sed volutpat fermentum, diam felis tincidunt odio, eu maximus nulla purus at massa. Etiam eget tempus tellus, eget tempus arcu. Donec dapibus iaculis mauris in semper. Donec sed volutpat urna, quis fringilla turpis. Nulla ornare tellus eget dolor dictum, a sollicitudin ex viverra. Sed ut iaculis elit. Mauris iaculis nisi vitae enim fringilla luctus.
+\n\n
+Fusce sed ante orci. Quisque sodales, urna id eleifend tempor, nibh turpis sollicitudin tortor, nec sodales orci turpis ac turpis. Ut vel sem aliquam tellus pellentesque malesuada. Sed dapibus ut tellus sed molestie. Nam a felis dapibus, consequat justo at, imperdiet velit. Maecenas in finibus enim, et maximus orci. Praesent posuere vestibulum quam, nec efficitur arcu porta non. Ut tempus lobortis cursus. Vivamus mattis lobortis felis ac eleifend. Suspendisse condimentum interdum dictum. Nullam eget nisl in velit fermentum lacinia. Ut in congue arcu. Suspendisse malesuada lobortis tortor, et eleifend magna feugiat auctor. Nunc vitae pellentesque velit, sit amet gravida odio. Curabitur sollicitudin nulla nec urna rhoncus consequat. Praesent vel iaculis sapien.
+\n\n
+Praesent vel vehicula neque, vel porttitor odio. Aenean congue imperdiet quam id faucibus. Donec porta nulla eu nibh varius consectetur. Donec scelerisque ullamcorper felis, id faucibus dui molestie at. Pellentesque vitae egestas purus, ac pharetra magna. Donec sollicitudin augue tellus, ultricies pharetra ipsum congue et. Proin non nibh et nisl efficitur consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </string>
+
+    <string name="close">Cerrar</string>
+    <string name="begin_image_description">Mujer joven comprando con bolsas de colores</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_proveedores">Proveedores</string>
+    <string name="title_activity_empleados">EmpleadosActivity</string>
+    <string name="title_activity_tienda">TiendaActivity</string>
+    <string name="title_activity_directores">DirectoresActivity</string>
+
+</resources>
