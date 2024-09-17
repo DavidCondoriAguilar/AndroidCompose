@@ -60,6 +60,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation(platform("androidx.compose:compose-bom:2024.09.00"))
+    implementation ("androidx.navigation:navigation-compose:2.8.0")
     implementation ("androidx.compose.ui:ui:1.7.1")
     implementation ("androidx.compose.material:material:1.7.1")
     testImplementation("junit:junit:4.13.2")
