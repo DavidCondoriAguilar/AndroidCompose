@@ -1,6 +1,8 @@
 <H1>x.Fit - Gym Management App</H1>
 x.Fit es una aplicación móvil de gestión para gimnasios, diseñada con una interfaz moderna y funcional. Desarrollada en Android Studio usando Kotlin y Jetpack Compose, la app ofrece una experiencia intuitiva y amigable para usuarios que buscan organizar y seguir su rutina en el gimnasio.
 
+Lenguaje: Kotlin
+
 Funcionalidades Principales
 Pantalla de Carga (Splash Screen): Introducción con una animación suave y una pantalla de bienvenida estilizada.
 
@@ -19,20 +21,18 @@ Dashboard interactivo: Un menú inferior de navegación (Bottom Navigation) te p
 Perfiles de Entrenadores
 Consulta los perfiles de los entrenadores disponibles, conoce sus especialidades y accede a detalles adicionales, todo dentro de un diseño minimalista.
 
-Tecnologías Utilizadas
-Lenguaje: Kotlin
+Pendientes
+
 Arquitectura: MVVM (Model-View-ViewModel)
 UI Framework: Jetpack Compose
 Networking: Retrofit para consumo de APIs
-Inyección de Dependencias: Hilt
+Inyección de Dependencias: Hilt?xd
 Persistencia de Datos: Room Database (opcional según el avance del proyecto)
 Autenticación: Integración con Google y Facebook
 
 
-Cómo Clonar y Ejecutar el Proyecto
 Clona el repositorio:
-
-git clone https://github.com/tu-usuario/x-fit.git
+git clone https://github.com/tu-usuario/
 Abre el proyecto en Android Studio.
 Asegúrate de que tienes configurado el SDK de Android correctamente.
 Ejecuta la app en un emulador o dispositivo físico.
