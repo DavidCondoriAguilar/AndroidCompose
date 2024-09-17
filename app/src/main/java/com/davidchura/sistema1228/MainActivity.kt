@@ -85,7 +85,7 @@ fun LoginScreen() {
         // Title Text
         Text(
             text = stringResource(id = R.string.author),
-            style = MaterialTheme.typography.titleLarge,
+            style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(bottom = 24.dp) // Space below the title
         )
 
@@ -135,7 +135,7 @@ fun LoginScreen() {
             Text(
                 text = loginMessage,
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.error,
+                color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.padding(top = 16.dp) // Space above the message
             )
         }

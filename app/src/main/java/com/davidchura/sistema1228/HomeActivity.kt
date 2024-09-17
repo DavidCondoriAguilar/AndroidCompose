@@ -8,86 +8,89 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.*
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Build
-import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Face
-import androidx.compose.material.icons.filled.ShoppingCart
-import androidx.compose.material.icons.sharp.Star
-import androidx.compose.material3.Card
-import androidx.compose.material3.Icon
-import androidx.compose.ui.graphics.vector.ImageVector
 import com.davidchura.sistema1228.ui.theme.Sistema1228Theme
-import com.davidchura.sistema1228.R // Asegúrate de importar correctamente R
-import com.davidchura.sistema1228.pages.DirectoresActivity
-import com.davidchura.sistema1228.pages.Proveedores
-import com.davidchura.sistema1228.pages.TiendaActivity
+import com.davidchura.sistema1228.R
+import com.davidchura.sistema1228.pages.*
+
+// Colores personalizados
+val Green = Color(0xFF508D4E)
+val GreenDark = Color(0xFF1A5319)
 
 class HomeActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val etiquetas = arrayOf("Proveedores", "Empleados", "Tienda", "Directores", "Clientes", "Salir")
-        val iconos = arrayOf(
-            Icons.Default.Build,
-            Icons.Default.AccountCircle,
-            Icons.Default.Face,
-            Icons.Default.Edit,
-            Icons.Filled.ShoppingCart,
-            Icons.Sharp.Star
-        )
-
-        val destinations = arrayOf(
-            Proveedores::class.java,
-            TiendaActivity::class.java,
-            DirectoresActivity::class.java,
-        )
-
         setContent {
             Sistema1228Theme {
+                var selectedTab by remember { mutableStateOf(0) }
+
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    topBar = {
-                        TopAppBar(
-                            colors = topAppBarColors(
-                                containerColor = MaterialTheme.colorScheme.background,
-                                titleContentColor = MaterialTheme.colorScheme.secondary,
-                            ),
-                            title = {
-                                Text(stringResource(id = R.string.home))
+                    bottomBar = {
+                        BottomNavigation(
+                            backgroundColor = Green,
+                            contentColor = Color.White
+                        ) {
+                            // Define tabs within this scope
+                            val tabs = listOf(
+                                BottomNavItem("Home", Icons.Filled.Home, 0),
+                                BottomNavItem("Clases", Icons.Filled.Star, 1),
+                                BottomNavItem("Workout", Icons.Filled.LocationOn, 2),
+                                BottomNavItem("Perfil", Icons.Filled.Person, 3)
+                            )
+
+                            tabs.forEach { tab ->
+                                BottomNavigationItem(
+                                    icon = { Icon(imageVector = tab.icon, contentDescription = null) },
+                                    label = { Text(tab.label) },
+                                    selected = selectedTab == tab.index,
+                                    onClick = {
+                                        selectedTab = tab.index
+                                        val intent = when (tab.index) {
+                                            0 -> Intent(this@HomeActivity, HomeActivity::class.java)
+                                            1 -> Intent(this@HomeActivity, Proveedores::class.java)
+                                            2 -> Intent(this@HomeActivity, Proveedores::class.java)
+                                            3 -> Intent(this@HomeActivity, Proveedores::class.java)
+                                            else -> Intent(this@HomeActivity, HomeActivity::class.java)
+                                        }
+                                        startActivity(intent)
+                                    },
+                                    selectedContentColor = Color.White,
+                                    unselectedContentColor = Color.Gray
+                                )
                             }
-                        )
-                    },
+                        }
+                    }
                 ) { innerPadding ->
                     LazyVerticalGrid(
-                        columns = GridCells.Fixed(2), // Dos columnas
-                        contentPadding = innerPadding, // Aplica el padding de Scaffold
-                        horizontalArrangement = Arrangement.spacedBy(8.dp), // Espaciado horizontal
-                        verticalArrangement = Arrangement.spacedBy(8.dp) // Espaciado vertical
+                        columns = GridCells.Fixed(2),
+                        contentPadding = innerPadding,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        items(etiquetas.size) { index ->
-                            GridItem(text = etiquetas[index], icon = iconos[index]) {
-                                val intent = Intent(this@HomeActivity, destinations[index])
-                                startActivity(intent)
+                        items(4) { index -> // Use a fixed number for grid items for now
+                            GridItem(text = "Item $index", icon = Icons.Filled.PlayArrow) {
+                                // Placeholder action for GridItem click
                             }
                         }
                     }
@@ -99,42 +102,38 @@ class HomeActivity : ComponentActivity() {
 
 @Composable
 fun GridItem(text: String, icon: ImageVector, onClick: () -> Unit) {
-    val fontFamily = FontFamily(
-        Font(R.font.urbanist_bold) // Reemplaza con el recurso de fuente que desees usar
-    )
-
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(100.dp) // Altura fija para los ítems
-            .padding(8.dp) // Espaciado entre los ítems
-            .clickable(onClick = onClick), // Añade la acción de clic
-        shape = RoundedCornerShape(12.dp), // Bordes redondeados
-        border = BorderStroke(1.dp, Color.Gray), // Borde de 1 dp
+            .height(100.dp)
+            .padding(8.dp)
+            .clickable(onClick = onClick),
+        shape = RoundedCornerShape(12.dp),
+        border = BorderStroke(1.dp, GreenDark),
+        elevation = CardDefaults.elevatedCardElevation(4.dp) // Use CardDefaults.elevatedCardElevation
     ) {
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp), // Padding interno
+                .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start
         ) {
             Icon(
                 imageVector = icon,
                 contentDescription = null,
-                modifier = Modifier
-                    .size(40.dp)
-                    .padding(end = 12.dp), // Espacio entre ícono y texto
-                tint = MaterialTheme.colorScheme.primary // Color del ícono
+                modifier = Modifier.size(40.dp),
+                tint = Green
             )
             Text(
                 text = text,
                 style = TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = 18.sp, // Tamaño del texto
-                    color = Color.Black // Color del texto
+                    fontSize = 18.sp,
+                    color = Color.Black
                 )
             )
         }
     }
 }
+
+data class BottomNavItem(val label: String, val icon: ImageVector, val index: Int)
