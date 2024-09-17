@@ -17,7 +17,7 @@ class DirectoresActivity : ComponentActivity() {
         setContent {
             Sistema1228Theme {
                 Scaffold(
-                    topBar = { TopAppBar(title = { Text("Directores") }) },
+                    topBar = { TopAppBar(title = { Text("Trainer") }) },
                     content = { innerPadding ->
                         DirectoresScreen(modifier = Modifier.padding(innerPadding))
                     }
@@ -36,6 +36,6 @@ fun DirectoresScreen(modifier: Modifier = Modifier) {
     ) {
         Text("Bienvenido a la sección de Directores", style = MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(16.dp))
-        Text("Aquí puedes gestionar los directores y su información.")
+        Text("Aquí puedes gestionar a los trainers y su información.")
     }
 }
