@@ -6,10 +6,18 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.core.provider.FontsContractCompat.FontInfo
 import com.davidchura.sistema1228.R
 
 val Urbanist = FontFamily(
     Font(R.font.urbanist_regular, FontWeight.Normal),
+    Font(R.font.urbanist_bold, FontWeight.Bold),
+    Font(R.font.urbanist_black, FontWeight.Black),
+    Font(R.font.urbanist_extralight, FontWeight.ExtraLight)
+)
+
+val Noto = FontFamily(
+    Font(R.font.urbanist_extralight, FontWeight.Normal),
     Font(R.font.urbanist_bold, FontWeight.Bold),
     Font(R.font.urbanist_black, FontWeight.Black),
     Font(R.font.urbanist_extralight, FontWeight.ExtraLight)
@@ -43,20 +51,8 @@ val Typography = Typography(
     )
 
 
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
+
+
+
+
 )

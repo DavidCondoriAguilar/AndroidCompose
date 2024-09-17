@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sistema1228">
         <activity
+            android:name=".pages.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.Sistema1228" />
+        <activity
             android:name=".pages.DirectoresActivity"
             android:exported="false"
             android:label="@string/title_activity_directores"

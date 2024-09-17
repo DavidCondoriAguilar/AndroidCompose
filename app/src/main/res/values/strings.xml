@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Sistema 1228</string>
     <string name="phrase">Vine, ví y vencí</string>
-    <string name="author">Julio César</string>
+    <string name="author">Bienvenido a xFit</string>
     <string name="greeting">Hola</string>
     <string name="begin">Empezar</string>
     <string name="rights">2024 Todos los derechos reservados</string>
@@ -33,5 +33,7 @@ Praesent vel vehicula neque, vel porttitor odio. Aenean congue imperdiet quam id
     <string name="title_activity_empleados">EmpleadosActivity</string>
     <string name="title_activity_tienda">TiendaActivity</string>
     <string name="title_activity_directores">DirectoresActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_title">Bienvenido a xFit</string>
 
 </resources>
