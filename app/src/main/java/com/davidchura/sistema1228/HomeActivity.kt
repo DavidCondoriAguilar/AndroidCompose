@@ -72,7 +72,7 @@ class HomeActivity : ComponentActivity() {
                         startDestination = "home",
                         Modifier.padding(innerPadding)
                     ) {
-                        composable("home") { DirectoresScreen() }
+                        composable("home") { EmpleadoScreen(this@HomeActivity) }
                         composable("trainer") { ProveedoresScreen(this@HomeActivity) }
                         composable("workout") { CategoriasScreen(this@HomeActivity) }
                         composable("categorias") { CategoriasScreen(this@HomeActivity) }

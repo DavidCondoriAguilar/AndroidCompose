@@ -14,6 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sistema1228">
         <activity
+            android:name=".pages.EmpleadoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_empleado"
+            android:theme="@style/Theme.Sistema1228" />
+        <activity
             android:name=".pages.CategoriaActivity"
             android:exported="false"
             android:label="@string/title_activity_categoria"

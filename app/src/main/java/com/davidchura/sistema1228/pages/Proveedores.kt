@@ -41,7 +41,6 @@ fun ProveedoresScreen(context: Context) {
     var proveedores by remember { mutableStateOf(listOf<Proveedor>()) }
     var isLoading by remember { mutableStateOf(true) }
 
-    // Cargar datos al iniciar la composición
     if (isLoading) {
         scope.launch {
             fetchProveedores(context) { result ->

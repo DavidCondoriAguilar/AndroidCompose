@@ -72,6 +72,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+
+    //FETCH DATO
     implementation("com.android.volley:volley:1.2.1")
 
+    //IMAGENES
+    implementation("io.coil-kt:coil-compose:2.7.0")
 }
