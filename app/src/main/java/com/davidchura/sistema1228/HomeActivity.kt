@@ -42,9 +42,9 @@ class HomeActivity : ComponentActivity() {
                         ) {
                             val tabs = listOf(
                                 BottomNavItem("Home", Icons.Filled.Home, "home"),
-                                BottomNavItem("Clases", Icons.Filled.Star, "clases"),
+                                BottomNavItem("Trainers", Icons.Filled.Star, "trainer"),
                                 BottomNavItem("Workout", Icons.Filled.PlayArrow, "workout"),
-                                BottomNavItem("Perfil", Icons.Filled.Person, "perfil")
+                                BottomNavItem("Category", Icons.Filled.Person, "categorias")
                             )
 
                             tabs.forEach { tab ->
@@ -73,9 +73,9 @@ class HomeActivity : ComponentActivity() {
                         Modifier.padding(innerPadding)
                     ) {
                         composable("home") { DirectoresScreen() }
-                        composable("clases") { ProveedoresScreen() }
-                        composable("workout") { DirectoresScreen() }
-                        composable("perfil") { DirectoresScreen() }
+                        composable("trainer") { ProveedoresScreen(this@HomeActivity) }
+                        composable("workout") { CategoriasScreen(this@HomeActivity) }
+                        composable("categorias") { CategoriasScreen(this@HomeActivity) }
                     }
                 }
             }

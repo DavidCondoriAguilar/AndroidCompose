@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sistema1228">
         <activity
-            android:name=".pages.login.LoginActivity"
+            android:name=".pages.CategoriaActivity"
             android:exported="false"
-            android:label="@string/title_activity_login"
+            android:label="@string/title_activity_categoria"
             android:theme="@style/Theme.Sistema1228" />
         <activity
             android:name=".pages.DirectoresActivity"
@@ -25,16 +27,6 @@
             android:name=".pages.TiendaActivity"
             android:exported="false"
             android:label="@string/title_activity_tienda"
-            android:theme="@style/Theme.Sistema1228" />
-        <activity
-            android:name=".theme.TiendaActivity"
-            android:exported="false"
-            android:label="@string/title_activity_tienda"
-            android:theme="@style/Theme.Sistema1228" />
-        <activity
-            android:name=".pages.EmpleadosActivity"
-            android:exported="false"
-            android:label="@string/title_activity_empleados"
             android:theme="@style/Theme.Sistema1228" />
         <activity
             android:name=".pages.Proveedores"
