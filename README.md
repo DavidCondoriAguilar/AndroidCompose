@@ -17,6 +17,8 @@ Login: Autenticación rápida y segura, con soporte para inicio de sesión a tra
 Dashboard interactivo: Un menú inferior de navegación (Bottom Navigation) te permite acceder rápidamente a secciones clave como Clases, Entrenadores, y Ajustes.
 
 ![trainer](https://github.com/user-attachments/assets/591236e8-0918-4f14-a965-761d46af67e8)
+![1](https://github.com/user-attachments/assets/f87eeaf0-3b55-46d9-b819-f4146c6f18e9)
+![2](https://github.com/user-attachments/assets/fa7ca0d7-8cf0-4fc6-8575-825e54532ad8)
 
 Perfiles de Entrenadores
 Consulta los perfiles de los entrenadores disponibles, conoce sus especialidades y accede a detalles adicionales, todo dentro de un diseño minimalista.
