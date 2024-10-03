@@ -78,13 +78,12 @@ fun EmpleadoCard(empleado: Empleado) {
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            // URL de la imagen
-            val imageUrl = "https://servicios.campus.pe/fotos/${empleado.foto}" // Asegúrate de que esta sea la URL correcta
+            val imageUrl = "https://servicios.campus.pe/fotos/${empleado.foto}"
             Image(
                 painter = rememberAsyncImagePainter(imageUrl),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(128.dp) // Cambia el tamaño según sea necesario
+                    .size(128.dp)
                     .padding(bottom = 8.dp)
             )
             Text("Nombre: ${empleado.tratamiento} ${empleado.nombres} ${empleado.apellidos}")
@@ -94,3 +93,4 @@ fun EmpleadoCard(empleado: Empleado) {
         }
     }
 }
+

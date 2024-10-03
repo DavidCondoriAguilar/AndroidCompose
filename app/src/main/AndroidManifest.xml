@@ -14,6 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sistema1228">
         <activity
+            android:name=".content.StoreActivity"
+            android:exported="false"
+            android:label="@string/title_activity_store"
+            android:theme="@style/Theme.Sistema1228" />
+        <activity
+            android:name=".pages.ProductsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_products"
+            android:theme="@style/Theme.Sistema1228" />
+        <activity
+            android:name=".pages.StoreActivity"
+            android:exported="false"
+            android:label="@string/title_activity_store"
+            android:theme="@style/Theme.Sistema1228" />
+        <activity
             android:name=".pages.EmpleadoActivity"
             android:exported="false"
             android:label="@string/title_activity_empleado"

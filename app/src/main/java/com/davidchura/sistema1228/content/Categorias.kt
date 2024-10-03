@@ -1,5 +1,4 @@
 package com.davidchura.sistema1228.content
-
 data class Categorias(
     val idcategoria: String,
     val nombre: String,

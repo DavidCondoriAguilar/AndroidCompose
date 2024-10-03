@@ -40,4 +40,6 @@
     <string name="login_title">Bienvenido a xFit</string>
     <string name="title_activity_categoria">CategoriaActivity</string>
     <string name="title_activity_empleado">EmpleadoActivity</string>
+    <string name="title_activity_store">StoreActivity</string>
+    <string name="title_activity_products">ProductsActivity</string>
 </resources>

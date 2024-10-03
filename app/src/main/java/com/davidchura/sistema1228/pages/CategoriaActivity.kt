@@ -2,10 +2,12 @@ package com.davidchura.sistema1228.pages
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,7 +21,6 @@ import com.davidchura.sistema1228.Green
 import com.davidchura.sistema1228.content.Categorias
 import com.davidchura.sistema1228.content.fetchCategorias
 import com.davidchura.sistema1228.ui.theme.Sistema1228Theme
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 class CategoriaActivity : ComponentActivity() {
@@ -28,7 +29,7 @@ class CategoriaActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Sistema1228Theme {
-                CategoriasScreen(context = this) // Pasar el contexto
+                CategoriasScreen(context = this)
             }
         }
     }
@@ -43,12 +44,10 @@ fun CategoriasScreen(context: Context) {
     var isLoading by remember { mutableStateOf(true) }
 
     // Cargar datos al iniciar la composición
-    if (isLoading) {
-        scope.launch {
-            fetchCategorias(context) { result ->
-                categorias = result
-                isLoading = false
-            }
+    LaunchedEffect(Unit) {
+        fetchCategorias(context) { result ->
+            categorias = result
+            isLoading = false
         }
     }
 
@@ -76,7 +75,9 @@ fun CategoriasScreen(context: Context) {
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
                     items(categorias) { categoria ->
-                        CategoriaCard(categoria)
+                        CategoriaCard(categoria) { selectedCategory ->
+                            selectCategory(context, selectedCategory)
+                        }
                     }
                 }
             }
@@ -85,11 +86,12 @@ fun CategoriasScreen(context: Context) {
 }
 
 @Composable
-fun CategoriaCard(categoria: Categorias) {
+fun CategoriaCard(categoria: Categorias, onCategorySelected: (Categorias) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(vertical = 8.dp)
+            .clickable { onCategorySelected(categoria) },
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.elevatedCardElevation(4.dp)
     ) {
@@ -98,7 +100,15 @@ fun CategoriaCard(categoria: Categorias) {
             Spacer(modifier = Modifier.height(4.dp))
             Text(text = categoria.descripcion, style = MaterialTheme.typography.bodyMedium)
             Text(text = "Total: ${categoria.total}", style = MaterialTheme.typography.bodyMedium)
-            // Aquí podrías agregar la imagen, usando una librería como Coil o similar
         }
     }
+}
+
+// Función para redirigir a la página de productos con la categoría seleccionada
+fun selectCategory(context: Context, categoria: Categorias) {
+    val intent = Intent(context, ProductsActivity::class.java).apply {
+        putExtra("idcategoria", categoria.idcategoria)
+        putExtra("nombre", categoria.nombre)
+    }
+    context.startActivity(intent)
 }
